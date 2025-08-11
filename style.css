@@ -1,0 +1,112 @@
+main {
+    block-size: 100svb;
+    inline-size: 50svb;
+    margin-inline: auto;
+}
+
+canvas {
+    inline-size: 100%;
+    block-size: 100%;
+    image-rendering: pixelated;
+}
+
+div {
+    inline-size: 100%;
+    text-align: center;
+}
+
+#song {
+    block-size: 2em;
+    background-color: #F99;
+    color: #933;
+    border-radius: 0.5em;
+}
+
+#say {
+    block-size: 8em;
+    border-radius: 0.5em;
+    padding-inline: 0.5em;
+    text-align: left;
+}
+
+.none {
+    display: none;
+}
+
+#start {
+    border-style: none;
+    inline-size: 8em;
+    border-radius: 1em;
+}
+
+#restart {
+    border-style: none;
+    inline-size: 8em;
+    margin-block-start: 1rem;
+    border-radius: 1em;
+}
+
+#hp {
+    block-size: 2em;
+    padding-inline: 0.5em;
+    border-radius: 0.5em;
+    text-align: left;
+    color: #C66;
+}
+
+#chi {
+    border-style: none;
+    margin-block-start: 1rem;
+    font-size: 16svb;
+    inline-size: 36svb;
+    block-size: 36svb;
+    border-radius: 20svb;
+}
+
+button {
+    background-color: #F99;
+    color: #933;
+}
+
+.dragon {
+    background-color: #9F9;
+    color: #393;
+}
+
+.adechi {
+    background-color: #F99;
+    color: #933;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+body {
+    background-color: #FFF;
+    color: #000;
+    inline-size: 100%;
+    block-size: 100%;
+}
+
+:root {
+    font-size: 2.5svb;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    inline-size: 100%;
+    block-size: 100%;
+}
+
+* {
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-family: sans-serif;
+    font-size: 1em;
+    line-height: 2em;
+    word-spacing: 0;
+    box-sizing: border-box;
+    touch-action: manipulation;
+    outline: none;
+}
