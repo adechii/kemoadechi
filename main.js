@@ -277,7 +277,7 @@ const monuStart = () => {
         monuSpeed = 8;
         monuDamage = 1;
         monuSprite = [0, 2, 3, 1, 1, 2, 3, 1, 2, 2, 3, 1, 3, 2, 3, 1, 0, 3, 3, 1, 1, 3, 3, 1];
-        monuSound = [32, 12, -1, -1, 32, -12, -1, -1, 32, 12, -1, -1, 32, -12, -1, -1, 32, 12, -1, -1, 32, -12, -1, -1];
+        monuSound = [24, 12, -1, -1, 24, 12, -1, -1, 24, 12, -1, -1, 24, 12, -1, -1, 24, 12, -1, -1, 24, 12, -1, -1];
         say('dragon', 'まだ始まってないだろ！めちゃくちゃになめてやる。');
     } else
     // 早すぎ
@@ -285,7 +285,7 @@ const monuStart = () => {
         monuSpeed = 6;
         monuDamage = 0.5;
         monuSprite = [0, 2, 3, 1, 1, 2, 3, 1];
-        monuSound = [32, 12, -1, -1, 32, -12, -1, -1];
+        monuSound = [28, 12, -1, -1, 28, -12, -1, -1];
         say('dragon', '早すぎるだろ！罰として速く前後になめてやる。');
     } else
     // 早い
@@ -301,7 +301,7 @@ const monuStart = () => {
         monuSpeed = 4;
         monuDamage = 0.1;
         monuSprite = [2, 2, 3, 1, 3, 2, 3, 1];
-        monuSound = [32, 12, -1, -1, 32, -12, -1, -1];
+        monuSound = [36, 12, -1, -1, 36, -12, -1, -1];
         say('dragon', 'ぴったりだ。ご褒美に上下になめてやる。');
     } else
     // 遅い
@@ -317,7 +317,7 @@ const monuStart = () => {
         monuSpeed = 6;
         monuDamage = 0.5;
         monuSprite = [0, 3, 3, 1, 1, 3, 3, 1];
-        monuSound = [32, 12, -1, -1, 32, -12, -1, -1];
+        monuSound = [28, 12, -1, -1, 28, -12, -1, -1];
         say('dragon', '遅すぎるだろ！罰として速く左右になめてやる。');
     } else
     // 待ちくたびれた
@@ -325,7 +325,7 @@ const monuStart = () => {
         monuSpeed = 8;
         monuDamage = 1;
         monuSprite = [0, 2, 3, 1, 1, 2, 3, 1, 2, 2, 3, 1, 3, 2, 3, 1, 0, 3, 3, 1, 1, 3, 3, 1];
-        monuSound = [32, 12, -1, -1, 32, -12, -1, -1, 32, 12, -1, -1, 32, -12, -1, -1, 32, 12, -1, -1, 32, -12, -1, -1];
+        monuSound = [24, 12, -1, -1, 24, 12, -1, -1, 24, 12, -1, -1, 24, 12, -1, -1, 24, 12, -1, -1, 24, 12, -1, -1];
         say('dragon', '待ちくたびれたわ！めちゃくちゃになめてやる。');
     }
 }
@@ -373,7 +373,7 @@ const monuResult = () => {
     } else
     // 早い
     if(judge < -0.05) {
-        say('dragon', '残念だったな。');
+        say('dragon', '惜しかったな。');
     } else
     // ジャスト
     if(judge < 0.05) {
@@ -381,7 +381,7 @@ const monuResult = () => {
     } else
     // 遅い
     if(judge < 1) {
-        say('dragon', '残念だったな。');
+        say('dragon', '惜しかったな。');
     } else
     // 遅すぎ
     if(judge < 5) {
@@ -469,27 +469,27 @@ const eatenFn = (deltaTime) => {
     }else
 
     // もぬ終了
-    if(monuCount < 26) {
+    if(monuCount < 24) {
         const c = Math.floor(monuCount) - 20;
         if(c === 0) draw(3, 1);
-        if(c === 2) draw(2, 1);
-        if(c === 4) draw(1, 1);
+        if(c === 1) draw(2, 1);
+        if(c === 2) draw(1, 1);
         if(c === 0) say('dragon', '');
-        if(c === 4 && hp > 0) monuResult();
-        if(c === 4 && hp <= 0) say('dragon', '');
+        if(c === 2 && hp > 0) monuResult();
+        if(c === 2 && hp <= 0) say('dragon', '');
     }else
 
     // 口を開ける
-    if(monuCount < 100) {
-        const c = Math.floor(monuCount) - 26;
+    if(monuCount < 128) {
+        const c = Math.floor(monuCount) - 24;
         draw(c % 2 + 2, 3);
-        if(Math.floor(monuCount) === 26 && Math.floor(prevMonuCount) === 25) playMonu(24, 0.2, 24);
+        if(Math.floor(monuCount) === 24 && Math.floor(prevMonuCount) === 23) playMonu(24, 0.2, 24);
         if(hp > 0) {
             monuEnd();
             show('restart');
         }
         else {
-            say('adechi', 'も…もうだめ…。');
+            say('adechi', 'もうだめ…。');
         }
     }
 }
@@ -517,26 +517,33 @@ requestAnimationFrame(frame);
 elem.start.addEventListener('click', (e) => {
     hide('title');
     show('game');
+    show('chi');
     soundStart();
     stage = 'game';
     songTime = 0;
     init();
 });
 
-// 「ち」ボタンを押した
-elem.chi.addEventListener('click', (e) => {
+// 「ち」を押した
+const chi = (e) => {
     judge = songTime - 7.5; // 判定
     playChi();
     stage = 'chi';
     viewSong('ち');
+    hide('chi');
     draw(3, 0);
-});
+}
+
+// 「ち」ボタンを押した
+elem.chi.addEventListener('mousedown', chi);
+elem.chi.addEventListener('touchstart', chi);
 
 // リスタートボタンを押した
 elem.restart.addEventListener('click', (e) => {
     hide('result');
     hide('restart');
     show('game');
+    show('chi');
     stage = 'game';
     init();
 });
