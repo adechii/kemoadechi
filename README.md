@@ -1,2 +1,2 @@
 # けもあでちーゲーム
-[あそぶ](https://adechii.github.io/kemoadechi/)
+[あそぶ](https://adechii.github.io/kemoadechii/)
