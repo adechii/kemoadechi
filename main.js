@@ -225,7 +225,7 @@ const viewSong = (text) => {
 // セリフ表示
 const say = (name, text) => {
     elem.say.className = name;
-    elem.say.textContent = text;
+    elem.say.innerHTML = text;
 };
 
 // 初期化
@@ -278,7 +278,7 @@ const monuStart = () => {
         monuDamage = 1;
         monuSprite = [0, 2, 3, 1, 1, 2, 3, 1, 2, 2, 3, 1, 3, 2, 3, 1, 0, 3, 3, 1, 1, 3, 3, 1];
         monuSound = [24, 12, -1, -1, 24, 12, -1, -1, 24, 12, -1, -1, 24, 12, -1, -1, 24, 12, -1, -1, 24, 12, -1, -1];
-        say('dragon', 'まだ始まってないだろ！めちゃくちゃになめてやる。');
+        say('dragon', 'まだ始まってないだろ！<br>めちゃくちゃになめてやる。');
     } else
     // 早すぎ
     if(judge < -1) {
@@ -286,7 +286,7 @@ const monuStart = () => {
         monuDamage = 0.5;
         monuSprite = [0, 2, 3, 1, 1, 2, 3, 1];
         monuSound = [28, 12, -1, -1, 28, -12, -1, -1];
-        say('dragon', '早すぎるだろ！罰として速く前後になめてやる。');
+        say('dragon', '早すぎるだろ！<br>罰として速く前後になめてやる。');
     } else
     // 早い
     if(judge < -0.05) {
@@ -294,7 +294,7 @@ const monuStart = () => {
         monuDamage = 0.2;
         monuSprite = [0, 2, 3, 1, 1, 2, 3, 1];
         monuSound = [32, 12, -1, -1, 32, -12, -1, -1];
-        say('dragon', '少し早いわ。お仕置きで前後になめてやる。');
+        say('dragon', '少し早いわ。<br>お仕置きで前後になめてやる。');
     } else
     // ジャスト
     if(judge < 0.05) {
@@ -302,7 +302,7 @@ const monuStart = () => {
         monuDamage = 0.1;
         monuSprite = [2, 2, 3, 1, 3, 2, 3, 1];
         monuSound = [36, 12, -1, -1, 36, -12, -1, -1];
-        say('dragon', 'ぴったりだ。ご褒美に上下になめてやる。');
+        say('dragon', 'ぴったりだ。<br>ご褒美に上下になめてやる。');
     } else
     // 遅い
     if(judge < 1) {
@@ -310,7 +310,7 @@ const monuStart = () => {
         monuDamage = 0.2;
         monuSprite = [0, 3, 3, 1, 1, 3, 3, 1];
         monuSound = [32, 12, -1, -1, 32, -12, -1, -1];
-        say('dragon', '少し遅いわ。お仕置きで左右になめてやる。');
+        say('dragon', '少し遅いわ。<br>お仕置きで左右になめてやる。');
     } else
     // 遅すぎ
     if(judge < 5) {
@@ -318,7 +318,7 @@ const monuStart = () => {
         monuDamage = 0.5;
         monuSprite = [0, 3, 3, 1, 1, 3, 3, 1];
         monuSound = [28, 12, -1, -1, 28, -12, -1, -1];
-        say('dragon', '遅すぎるだろ！罰として速く左右になめてやる。');
+        say('dragon', '遅すぎるだろ！<br>罰として速く左右になめてやる。');
     } else
     // 待ちくたびれた
     {
@@ -326,7 +326,7 @@ const monuStart = () => {
         monuDamage = 1;
         monuSprite = [0, 2, 3, 1, 1, 2, 3, 1, 2, 2, 3, 1, 3, 2, 3, 1, 0, 3, 3, 1, 1, 3, 3, 1];
         monuSound = [24, 12, -1, -1, 24, 12, -1, -1, 24, 12, -1, -1, 24, 12, -1, -1, 24, 12, -1, -1, 24, 12, -1, -1];
-        say('dragon', '待ちくたびれたわ！めちゃくちゃになめてやる。');
+        say('dragon', '待ちくたびれたわ！<br>めちゃくちゃになめてやる。');
     }
 }
 
